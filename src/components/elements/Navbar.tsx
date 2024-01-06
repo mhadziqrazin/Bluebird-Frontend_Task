@@ -5,6 +5,8 @@ import { FaCarSide } from 'react-icons/fa'
 import { MdOutlineMenu, MdClose } from 'react-icons/md'
 import { useOutsideClick } from '../hooks'
 import { Search } from './Search'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 interface NavMenu {
   name: string
@@ -21,6 +23,7 @@ export const Navbar: React.FC = () => {
   const [menu, setMenu] = useState<string>('Home')
   const [openMenu, setOpenMenu] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
+  const router = useRouter()
 
   useEffect(() => {
     setVisible(openMenu)
@@ -35,7 +38,7 @@ export const Navbar: React.FC = () => {
 
   const handleMenuButton = (opt: NavMenu) => {
     setMenu(opt.name)
-    // navigate(opt.href)
+    router.push(opt.href)
   }
 
   const handleSearch = () => {
@@ -48,15 +51,15 @@ export const Navbar: React.FC = () => {
         <a href='/'>
           <FaCarSide size={25} />
         </a>
-        <ul className='hidden sm:flex gap-6'>
+        <ul className='hidden sm:flex gap-6 font-medium'>
           <li>
-            <a href='/'>Home</a>
+            <Link href='/'>Home</Link>
           </li>
           <li>
-            <a href='/wishlist'>Wishlist</a>
+            <Link href='/wishlist'>Wishlist</Link>
           </li>
           <li>
-            <a href='/mybook'>My Book</a>
+            <Link href='/mybook'>My Book</Link>
           </li>
         </ul>
         <div ref={menuRef} className='relative flex sm:hidden justify-center'>
