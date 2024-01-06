@@ -5,7 +5,7 @@ import { FaCarSide } from 'react-icons/fa'
 import { MdOutlineMenu, MdClose } from 'react-icons/md'
 import { useOutsideClick } from '@/hooks'
 import { Search } from './Search'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 interface NavMenu {
@@ -24,10 +24,17 @@ export const Navbar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
   const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     setVisible(openMenu)
   }, [openMenu])
+
+  useEffect(() => {
+    if (pathname === '/wishlist') setMenu('Wishlist')
+    else if (pathname === '/mybook') setMenu('My Book')
+    else setMenu('Home')
+  }, [pathname])
 
   const handleCloseMenu = () => {
     setVisible(false)
@@ -52,13 +59,13 @@ export const Navbar: React.FC = () => {
           <FaCarSide size={25} />
         </a>
         <ul className='hidden sm:flex gap-6 font-medium'>
-          <li>
+          <li className={`${menu === 'Home' ? 'bg-secondary rounded-full' : ''} px-4 py-[3px]`}>
             <Link href='/'>Home</Link>
           </li>
-          <li>
+          <li className={`${menu === 'Wishlist' ? 'bg-secondary rounded-full' : ''} px-4 py-[3px]`}>
             <Link href='/wishlist'>Wishlist</Link>
           </li>
-          <li>
+          <li className={`${menu === 'My Book' ? 'bg-secondary rounded-full' : ''} px-4 py-[3px]`}>
             <Link href='/mybook'>My Book</Link>
           </li>
         </ul>
