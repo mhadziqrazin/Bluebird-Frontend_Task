@@ -12,9 +12,9 @@ interface NavMenu {
 }
 
 const menus: NavMenu[] = [
-  { name: 'Home', href:'/' },
-  { name: 'Wishlist', href:'/wishlist' },
-  { name: 'My Book', href:'/mybook' }
+  { name: 'Home', href: '/' },
+  { name: 'Wishlist', href: '/wishlist' },
+  { name: 'My Book', href: '/mybook' }
 ]
 
 export const Navbar: React.FC = () => {
@@ -60,14 +60,14 @@ export const Navbar: React.FC = () => {
           </li>
         </ul>
         <div ref={menuRef} className='relative flex sm:hidden justify-center'>
-          <button
-            onClick={() => setOpenMenu(!openMenu)}
-          >
+          <button onClick={() => setOpenMenu(!openMenu)}>
             <MdOutlineMenu size={25} />
           </button>
-          {openMenu &&
+          {openMenu && (
             <div
-              className={`fixed w-[270px] flex sm:hidden flex-col items-end gap-4 top-0 right-0 h-full p-4 bg-primary ${visible ? 'translate-x-0' : 'translate-x-full'} transition-all duration-200 ease-out`}
+              className={`fixed w-[270px] flex sm:hidden flex-col items-end gap-4 top-0 right-0 h-full p-4 bg-primary ${
+                visible ? 'translate-x-0' : 'translate-x-full'
+              } transition-all duration-200 ease-out`}
             >
               <button onClick={handleCloseMenu}>
                 <MdClose size={25} />
@@ -75,7 +75,12 @@ export const Navbar: React.FC = () => {
               <Search />
               <ul className='w-full flex flex-col gap-2'>
                 {menus.map((opt) => (
-                  <li key={opt.name} className={`${menu === opt.name ? 'bg-secondary' : ''} w-full px-4 py-[3px] rounded-full`}>
+                  <li
+                    key={opt.name}
+                    className={`${
+                      menu === opt.name ? 'bg-secondary' : ''
+                    } w-full px-4 py-[3px] rounded-full`}
+                  >
                     <button onClick={() => handleMenuButton(opt)} className='w-full text-left'>
                       {opt.name}
                     </button>
@@ -83,7 +88,7 @@ export const Navbar: React.FC = () => {
                 ))}
               </ul>
             </div>
-          }
+          )}
         </div>
         <div className='hidden sm:block'>
           <Search />
