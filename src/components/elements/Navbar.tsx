@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { FaCarSide } from 'react-icons/fa'
 import { MdOutlineMenu, MdClose } from 'react-icons/md'
+import { useOutsideClick } from '../hooks'
 import { Search } from './Search'
 
 interface NavMenu {
@@ -30,6 +31,8 @@ export const Navbar: React.FC = () => {
     setTimeout(() => setOpenMenu(false), 200)
   }
 
+  const menuRef = useOutsideClick(handleCloseMenu)
+
   const handleMenuButton = (opt: NavMenu) => {
     setMenu(opt.name)
     // navigate(opt.href)
@@ -56,7 +59,7 @@ export const Navbar: React.FC = () => {
             <a href='/mybook'>My Book</a>
           </li>
         </ul>
-        <div className='relative flex sm:hidden justify-center'>
+        <div ref={menuRef} className='relative flex sm:hidden justify-center'>
           <button
             onClick={() => setOpenMenu(!openMenu)}
           >
