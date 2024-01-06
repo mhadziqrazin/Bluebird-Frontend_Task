@@ -46,8 +46,8 @@ export const Navbar: React.FC = () => {
   }
 
   return (
-    <nav className='bg-primary px-4 py-4 shadow-xl'>
-      <div className='relative flex items-center justify-between container mx-auto text-white'>
+    <nav className='bg-primary shadow-xl'>
+      <div className='relative flex items-center justify-between container mx-auto px-4 py-4 text-white'>
         <a href='/'>
           <FaCarSide size={25} />
         </a>
