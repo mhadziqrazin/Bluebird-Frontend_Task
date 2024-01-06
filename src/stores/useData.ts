@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Data } from '../interface'
+import { Data } from '../components/interface'
 
 interface DataStore {
   data: Data
@@ -15,4 +15,5 @@ const useData = create<DataStore>((set) => ({
 }))
 
 export default useData
+
 

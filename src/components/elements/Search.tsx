@@ -2,7 +2,7 @@
 
 import { MdSearch } from 'react-icons/md'
 import { useState } from 'react'
-import { useOutsideClick } from '../hooks'
+import { useOutsideClick } from '@/hooks'
 
 export const Search: React.FC = () => {
   const [openSearch, setOpenSearch] = useState<boolean>(false)

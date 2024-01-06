@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { FaCarSide } from 'react-icons/fa'
 import { MdOutlineMenu, MdClose } from 'react-icons/md'
-import { useOutsideClick } from '../hooks'
+import { useOutsideClick } from '@/hooks'
 import { Search } from './Search'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
