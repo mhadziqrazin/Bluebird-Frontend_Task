@@ -3,9 +3,10 @@ import { Data } from '../components/interface'
 
 interface DataStore {
   data: Data
+  setData: (data: Data) => void
 }
 
-const useData = create<DataStore>((set) => ({
+export const useData = create<DataStore>((set) => ({
   data: {
     category: [],
     type: []
@@ -13,7 +14,3 @@ const useData = create<DataStore>((set) => ({
 
   setData: (data: Data) => set({ data: data })
 }))
-
-export default useData
-
-
