@@ -4,7 +4,7 @@ const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
@@ -14,7 +14,7 @@ const config: Config = {
         primary: '#2f5296',
         secondary: '#0c72b5'
       }
-    },
-  },
+    }
+  }
 }
 export default config

@@ -6,16 +6,12 @@ const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700
 
 export const metadata: Metadata = {
   title: 'Hadziq | Bluebird Frontend Task',
-  description: 'Bluebird Frontend Task',
+  description: 'Bluebird Frontend Task'
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={poppins.className}>{children}</body>
     </html>
   )
