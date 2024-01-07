@@ -21,6 +21,9 @@ export default function MyBook() {
       <h1 className='text-3xl font-semibold text-center max-w-[350px] sm:max-w-fit text-primary'>
         My Booked Vehicles
       </h1>
+      {books.length === 0 && (
+        <p className='text-xl font-medium text-secondary'>You haven&apos;t book any car</p>
+      )}
       <section className='flex flex-col gap-8'>
         {books.map((car) => (
           <VehicleCardUser key={car.vehicle} car={car} deleteAction={() => removeBook(car)} />

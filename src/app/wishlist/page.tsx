@@ -21,6 +21,11 @@ export default function Wishlist() {
       <h1 className='text-3xl font-semibold text-center max-w-[350px] sm:max-w-fit text-primary'>
         My Wishlist
       </h1>
+      {likes.length === 0 && (
+        <p className='text-xl font-medium text-secondary'>
+          You haven&apos;t add any car to wishlist
+        </p>
+      )}
       <section className='flex flex-col gap-8'>
         {likes.map((car) => (
           <VehicleCardUser key={car.vehicle} car={car} deleteAction={() => removeLike(car)} />
