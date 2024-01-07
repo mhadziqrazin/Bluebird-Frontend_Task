@@ -3,7 +3,8 @@
 import Image from 'next/image'
 import { Data } from '../interface'
 import { FaChevronDown } from 'react-icons/fa'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useData } from '@/stores'
 
 interface NavCategoryProps {
   data: Data
@@ -11,6 +12,12 @@ interface NavCategoryProps {
 
 export const NavCategory: React.FC<NavCategoryProps> = ({ data }) => {
   const [open, setOpen] = useState<boolean>(false)
+  const { setData } = useData()
+
+  useEffect(() => {
+    setData(data)
+    console.log('u')
+  }, [])
 
   return (
     <div className='flex flex-col gap-2 py-4 bg-secondary shadow-xl'>
