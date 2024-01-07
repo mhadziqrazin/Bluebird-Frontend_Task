@@ -21,4 +21,3 @@ export interface Data {
   category: Category[]
   type: Type[]
 }
-

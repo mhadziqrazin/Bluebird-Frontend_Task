@@ -1,9 +1,11 @@
 'use server'
 
-import { Data } from "@/components/interface"
+import { Data } from '@/components/interface'
 
 export async function getData() {
-  const res = await fetch('https://private-f2fbfb-ridecar2.apiary-mock.com/vehicles', { next: { revalidate: 900 } })
+  const res = await fetch('https://private-f2fbfb-ridecar2.apiary-mock.com/vehicles', {
+    next: { revalidate: 900 }
+  })
 
   if (!res.ok) {
     throw new Error('Something went wrong when fetching data')
@@ -12,4 +14,3 @@ export async function getData() {
   const data: Data = await res.json()
   return data
 }
-

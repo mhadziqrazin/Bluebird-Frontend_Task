@@ -19,9 +19,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={poppins.className}>
         <Navbar />
         <NavCategory data={data} />
-        <div className='grow'>
-          {children}
-        </div>
+        <div className='grow'>{children}</div>
         <Footer />
       </body>
     </html>

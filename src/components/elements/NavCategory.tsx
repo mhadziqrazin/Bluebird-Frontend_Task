@@ -1,9 +1,9 @@
 'use client'
 
-import Image from "next/image"
-import { Data } from "../interface"
+import Image from 'next/image'
+import { Data } from '../interface'
 import { FaChevronDown } from 'react-icons/fa'
-import { useState } from "react"
+import { useState } from 'react'
 
 interface NavCategoryProps {
   data: Data
@@ -19,16 +19,17 @@ export const NavCategory: React.FC<NavCategoryProps> = ({ data }) => {
           <div className='container mx-auto flex sm:justify-center'>
             <ul className='flex gap-2 sm:gap-6 justify-center px-4 items-center'>
               {data.category.map((item) => (
-                <li key={item.id} className='min-w-[125px] flex flex-col items-center rounded-xl bg-black/5 p-2 cursor-pointer hover:bg-black/10 transition-colors duration-200'>
+                <li
+                  key={item.id}
+                  className='min-w-[125px] flex flex-col items-center rounded-xl bg-black/5 p-2 cursor-pointer hover:bg-black/10 transition-colors duration-200'
+                >
                   <Image
                     width={40}
                     height={40}
                     src={item.imageURL.split(' ').join('')}
                     alt={item.name}
                   />
-                  <p className='text-sm text-white font-light'>
-                    {item.name}
-                  </p>
+                  <p className='text-sm text-white font-light'>{item.name}</p>
                 </li>
               ))}
             </ul>
@@ -37,9 +38,7 @@ export const NavCategory: React.FC<NavCategoryProps> = ({ data }) => {
       )}
       <div className='flex justify-center'>
         <button onClick={() => setOpen(!open)} className='flex gap-[3px] items-center text-white'>
-          <p>
-            Category
-          </p>
+          <p>Category</p>
           <div className={`${open ? 'rotate-180' : 'rotate-0'} transition-transform duration-200`}>
             <FaChevronDown size={12} />
           </div>
