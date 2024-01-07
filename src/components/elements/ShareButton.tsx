@@ -1,7 +1,7 @@
 'use client'
 
-import toast from "react-hot-toast"
-import { FaShareFromSquare } from "react-icons/fa6"
+import toast from 'react-hot-toast'
+import { FaShareFromSquare } from 'react-icons/fa6'
 
 export const ShareButton: React.FC = () => {
   const handleShare = () => {

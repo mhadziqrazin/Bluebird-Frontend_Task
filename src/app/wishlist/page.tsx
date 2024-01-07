@@ -1,8 +1,8 @@
 'use client'
 
-import { VehicleCardUser } from "@/components/elements/VehicleCardUser"
-import { useUser } from "@/stores"
-import { useMemo } from "react"
+import { VehicleCardUser } from '@/components/elements/VehicleCardUser'
+import { useUser } from '@/stores'
+import { useMemo } from 'react'
 
 export default function Wishlist() {
   const { likes, removeLike } = useUser()
@@ -26,7 +26,7 @@ export default function Wishlist() {
           <VehicleCardUser key={car.vehicle} car={car} deleteAction={() => removeLike(car)} />
         ))}
         <p className='w-fit self-end p-4 rounded-xl bg-secondary font-light text-white'>
-        Total price: <b className='font-semibold'>{totalPrice}</b>
+          Total price: <b className='font-semibold'>{totalPrice}</b>
         </p>
       </section>
     </main>

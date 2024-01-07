@@ -18,10 +18,11 @@ export async function getDetail(id: number, vehicle: string) {
   const data: Data = await res.json()
   for (let i = 0; i < data.type.length; i++) {
     if (data.type[i].id === id) {
-      return data.type[i].car_type.find((item) => item.vehicle.toLowerCase() === vehicle.toLowerCase())
+      return data.type[i].car_type.find(
+        (item) => item.vehicle.toLowerCase() === vehicle.toLowerCase()
+      )
     }
   }
 
   return undefined
 }
-

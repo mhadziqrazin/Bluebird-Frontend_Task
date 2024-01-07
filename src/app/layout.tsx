@@ -18,7 +18,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang='en'>
       <body className={poppins.className}>
-        <Toaster toastOptions={{ duration: 2000 }}/>
+        <Toaster toastOptions={{ duration: 2000 }} />
         <Navbar />
         <NavCategory data={data} />
         <div className='grow'>{children}</div>

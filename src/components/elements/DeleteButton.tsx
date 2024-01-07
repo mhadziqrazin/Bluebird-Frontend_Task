@@ -11,7 +11,7 @@ export const DeleteButton: React.FC<DeleteButtonProps> = ({ onClick }) => {
   }
 
   return (
-    <button className='text-red-500' onClick={handleDelete} >
+    <button className='text-red-500' onClick={handleDelete}>
       <RiDeleteBin5Fill size={20} />
     </button>
   )

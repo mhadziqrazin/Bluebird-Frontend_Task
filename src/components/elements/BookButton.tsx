@@ -25,16 +25,14 @@ export const BookButton: React.FC<BookButtonProps> = ({ car }) => {
 
   return (
     <button onClick={handleLike} className='text-sm sm:text-lg font-medium'>
-      {booked ?
+      {booked ? (
         <div className='flex gap-[2px] px-4 py-[2px] rounded-full items-center bg-black/40 text-white'>
           <p>Cancel book</p>
           <MdOutlineClose size={20} />
-        </div> :
-        <p className='px-4 py-[2px] rounded-full bg-secondary text-white'>
-          Book
-        </p>
-      }
+        </div>
+      ) : (
+        <p className='px-4 py-[2px] rounded-full bg-secondary text-white'>Book</p>
+      )}
     </button>
   )
 }
-
