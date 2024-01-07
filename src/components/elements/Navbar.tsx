@@ -53,7 +53,7 @@ export const Navbar: React.FC = () => {
   }
 
   return (
-    <nav className='bg-primary shadow-xl'>
+    <nav className='bg-primary z-10'>
       <div className='relative flex items-center justify-between container mx-auto px-4 py-4 text-white'>
         <a href='/'>
           <FaCarSide size={25} />
