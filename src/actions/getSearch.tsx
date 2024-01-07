@@ -4,7 +4,7 @@ import { CarStore, Data } from '@/components/interface'
 
 export async function getSearch(vehicle: string) {
   if (!vehicle) {
-    return undefined
+    return []
   }
 
   const res = await fetch('https://private-f2fbfb-ridecar2.apiary-mock.com/vehicles', {

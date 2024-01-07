@@ -1,20 +1,21 @@
-import { getSearch } from "@/actions"
+import { getCategory } from "@/actions"
 import { VehicleCardSearch } from "@/components/elements"
 
-interface SearchParams {
+interface CategorySearchParams {
   searchParams: {
-    vehicle: string
+    id: number
+    name: string
   }
 }
 
-export default async function SearchPage({ searchParams }: SearchParams) {
-  const { vehicle } = searchParams
-  const cars = await getSearch(vehicle)
+export default async function CategoryPage({ searchParams }: CategorySearchParams) {
+  const { id, name } = searchParams
+  const cars = await getCategory(Number(id))
 
   return (
     <main className='container mx-auto px-4 py-10 sm:py-20 flex flex-col items-center gap-10'>
       <h1 className='text-3xl font-semibold text-primary'>
-        Search results for: {vehicle}
+        {name}
       </h1>
       <section className='flex flex-col gap-4'>
         {cars.length === 0 && (

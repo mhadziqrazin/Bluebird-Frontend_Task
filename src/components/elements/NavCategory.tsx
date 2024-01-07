@@ -5,6 +5,7 @@ import { Data } from '../interface'
 import { FaChevronDown } from 'react-icons/fa'
 import { useEffect, useState } from 'react'
 import { useData } from '@/stores'
+import Link from 'next/link'
 
 interface NavCategoryProps {
   data: Data
@@ -25,8 +26,15 @@ export const NavCategory: React.FC<NavCategoryProps> = ({ data }) => {
           <div className='container mx-auto flex sm:justify-center'>
             <ul className='flex gap-2 sm:gap-6 justify-center px-4 items-center'>
               {data?.category.map((item) => (
-                <li
+                <Link
                   key={item.id}
+                  href={{
+                    pathname: '/category',
+                    query: {
+                      id: item.id,
+                      name: item.name
+                    }
+                  }}
                   className='min-w-[125px] flex flex-col items-center rounded-xl bg-black/5 p-2 cursor-pointer hover:bg-black/10 transition-colors duration-200'
                 >
                   <Image
@@ -37,7 +45,7 @@ export const NavCategory: React.FC<NavCategoryProps> = ({ data }) => {
                     unoptimized
                   />
                   <p className='text-sm text-white font-light'>{item.name}</p>
-                </li>
+                </Link>
               ))}
             </ul>
           </div>
