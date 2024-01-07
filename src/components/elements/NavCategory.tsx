@@ -35,6 +35,7 @@ export const NavCategory: React.FC<NavCategoryProps> = ({ data }) => {
                     height={40}
                     src={item.imageURL.split(' ').join('')}
                     alt={item.name}
+                    unoptimized
                   />
                   <p className='text-sm text-white font-light'>{item.name}</p>
                 </li>
