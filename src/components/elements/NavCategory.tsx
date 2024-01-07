@@ -24,7 +24,7 @@ export const NavCategory: React.FC<NavCategoryProps> = ({ data }) => {
         <div className='overflow-x-scroll scrollbar-hide transition-transform duration-200'>
           <div className='container mx-auto flex sm:justify-center'>
             <ul className='flex gap-2 sm:gap-6 justify-center px-4 items-center'>
-              {data.category?.map((item) => (
+              {data?.category.map((item) => (
                 <li
                   key={item.id}
                   className='min-w-[125px] flex flex-col items-center rounded-xl bg-black/5 p-2 cursor-pointer hover:bg-black/10 transition-colors duration-200'
