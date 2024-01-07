@@ -1,35 +1,45 @@
-import { create } from "zustand"
+import { CarType } from '@/components/interface'
+import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 interface UserStore {
-  likes: string[]
-  addLike: (vehicle: string) => void
-  removeLike: (vehicle: string) => void
+  likes: CarType[]
+  addLike: (vehicle: CarType) => void
+  removeLike: (vehicle: CarType) => void
 
-  books: string[]
-  addBook: (vehicle: string) => void
-  removeBook: (vehicle: string) => void
+  books: CarType[]
+  addBook: (vehicle: CarType) => void
+  removeBook: (vehicle: CarType) => void
 }
 
-export const useUser = create<UserStore>()(persist((set) => ({
-  likes: [],
-  books: [],
+export const useUser = create<UserStore>()(
+  persist(
+    (set) => ({
+      likes: [],
+      books: [],
 
-  addLike: (vehicle: string) => set((state) => ({
-    likes: [...state.likes, vehicle]
-  })),
+      addLike: (vehicle: CarType) =>
+        set((state) => ({
+          likes: [...state.likes, vehicle]
+        })),
 
-  addBook: (vehicle: string) => set((state) => ({
-    books: [...state.books, vehicle]
-  })),
+      addBook: (vehicle: CarType) =>
+        set((state) => ({
+          books: [...state.books, vehicle]
+        })),
 
-  removeLike: (vehicle: string) => set((state) => ({
-    likes: state.likes.filter((item) => item !== vehicle)
-  })),
+      removeLike: (vehicle: CarType) =>
+        set((state) => ({
+          likes: state.likes.filter((item) => item.vehicle !== vehicle.vehicle)
+        })),
 
-  removeBook: (vehicle: string) => set((state) => ({
-    books: state.books.filter((item) => item !== vehicle)
-  }))
-}), {
-  name: 'user store'
-}))
+      removeBook: (vehicle: CarType) =>
+        set((state) => ({
+          books: state.books.filter((item) => item.vehicle !== vehicle.vehicle)
+        }))
+    }),
+    {
+      name: 'user store'
+    }
+  )
+)
