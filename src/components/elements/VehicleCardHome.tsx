@@ -11,7 +11,7 @@ export const VehicleCardHome: React.FC<VehicleCardHomeProps> = ({ car }) => {
   return (
     <Link
       href='/'
-      className='relative min-w-[250px] flex flex-col items-center rounded-xl shadow-xl overflow-hidden hover:bg-black/5 transition-colors duration-200'
+      className='relative min-w-[250px] flex flex-col items-center rounded-2xl border-[2px] border-black/5 shadow-xl overflow-hidden hover:bg-black/5 transition-colors duration-200'
     >
       <Image
         width={250}
