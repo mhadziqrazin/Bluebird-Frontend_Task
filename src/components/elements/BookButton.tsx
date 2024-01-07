@@ -3,10 +3,10 @@
 import { useUser } from '@/stores'
 import { useEffect, useState } from 'react'
 import { MdOutlineClose } from 'react-icons/md'
-import { CarType } from '../interface'
+import { CarStore } from '../interface'
 
 interface BookButtonProps {
-  car: CarType
+  car: CarStore
 }
 
 export const BookButton: React.FC<BookButtonProps> = ({ car }) => {

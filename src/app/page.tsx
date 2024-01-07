@@ -1,13 +1,16 @@
 import { getData } from '@/actions'
 import { VehicleCardHome } from '@/components/elements'
-import { CarType } from '@/components/interface'
+import { CarStore, CarType } from '@/components/interface'
 
 export default async function Home() {
   const data = await getData()
 
-  const allVehicle: CarType[] = []
+  const allVehicle: CarStore[] = []
   data.type.map((type) => {
-    type.car_type.map((car) => allVehicle.push(car))
+    type.car_type.map((car) => allVehicle.push({
+      ...car,
+      id: type.id
+    }))
   })
   allVehicle.sort(() => 0.5 - Math.random())
 
@@ -17,7 +20,7 @@ export default async function Home() {
         Book any car of your choice, any time
       </h1>
       <section className='flex flex-col sm:flex-row gap-4'>
-        {allVehicle?.slice(0, 4).map((car, index) => <VehicleCardHome key={index} car={car} />)}
+        {allVehicle?.slice(0, 4).map((item, index) => <VehicleCardHome key={index} car={item as CarType} id={item.id} />)}
       </section>
     </main>
   )

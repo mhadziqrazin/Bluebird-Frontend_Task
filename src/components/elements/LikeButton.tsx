@@ -3,10 +3,10 @@
 import { useUser } from '@/stores'
 import { useEffect, useState } from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
-import { CarType } from '../interface'
+import { CarStore } from '../interface'
 
 interface LikeButtonProps {
-  car: CarType
+  car: CarStore
 }
 
 export const LikeButton: React.FC<LikeButtonProps> = ({ car }) => {

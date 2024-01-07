@@ -21,3 +21,7 @@ export interface Data {
   category: Category[]
   type: Type[]
 }
+
+export interface CarStore extends CarType {
+  id: number
+}

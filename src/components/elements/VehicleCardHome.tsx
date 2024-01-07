@@ -1,16 +1,22 @@
 import Image from 'next/image'
-import { CarType } from '../interface'
+import { CarStore } from '../interface'
 import Link from 'next/link'
 import { LikeButton } from './LikeButton'
 
 interface VehicleCardHomeProps {
-  car: CarType
+  car: CarStore
 }
 
 export const VehicleCardHome: React.FC<VehicleCardHomeProps> = ({ car }) => {
   return (
     <Link
-      href='/'
+      href={{
+        pathname: '/detail',
+        query: {
+          id: car.id,
+          vehicle: car.vehicle
+        }
+      }}
       className='relative min-w-[250px] flex flex-col items-center rounded-2xl border-[2px] border-black/5 shadow-xl overflow-hidden hover:bg-black/5 transition-colors duration-200'
     >
       <Image

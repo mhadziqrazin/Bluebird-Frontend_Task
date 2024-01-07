@@ -1,17 +1,23 @@
 import Link from 'next/link'
-import { CarType } from '../interface'
+import { CarStore } from '../interface'
 import Image from 'next/image'
 import { DeleteButton } from './DeleteButton'
 
 interface VehicleCardUserProps {
-  car: CarType
+  car: CarStore
   deleteAction: () => void
 }
 
 export const VehicleCardUser: React.FC<VehicleCardUserProps> = ({ car, deleteAction }) => {
   return (
     <Link
-      href='/'
+      href={{
+        pathname: '/detail',
+        query: {
+          id: car.id,
+          vehicle: car.vehicle
+        }
+      }}
       className='flex flex-col sm:grid sm sm:grid-cols-2 rounded-2xl overflow-hidden shadow-xl border-[2px] border-black/5 hover:bg-black/5 transition-colors duration-200'
     >
       <Image width={400} height={400} src={car.imageURL} alt={car.vehicle} className='p-4' />
