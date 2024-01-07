@@ -1,6 +1,7 @@
 import { getDetail } from '@/actions'
 import { BookButton, ShareButton } from '@/components/elements'
 import { LikeButton } from '@/components/elements/LikeButton'
+import { CarStore } from '@/components/interface'
 import Image from 'next/image'
 
 interface DetailSearchParams {
@@ -12,7 +13,7 @@ interface DetailSearchParams {
 
 export default async function Detail({ searchParams }: DetailSearchParams) {
   const { id, vehicle } = searchParams
-  const car = await getDetail(Number(id), vehicle)
+  const car: CarStore | undefined = await getDetail(Number(id), vehicle)
 
   if (!car) {
     return (

@@ -20,7 +20,7 @@ export default async function Home() {
         Book any car of your choice, any time
       </h1>
       <section className='flex flex-col sm:flex-row gap-4'>
-        {allVehicle?.slice(0, 4).map((item, index) => <VehicleCardHome key={index} car={item as CarType} id={item.id} />)}
+        {allVehicle?.slice(0, 4).map((item, index) => <VehicleCardHome key={index} car={item} />)}
       </section>
     </main>
   )
