@@ -17,7 +17,7 @@ export const VehicleCardSearch: React.FC<VehicleCardSearchProps> = ({ car }) => 
           vehicle: car.vehicle
         }
       }}
-      className='relative min-w-[400px] flex flex-col sm:grid sm:grid-cols-[0.75fr_1fr] items-center rounded-2xl border-[2px] border-black/5 shadow-xl overflow-hidden hover:bg-black/5 transition-colors duration-200'
+      className='relative sm:min-w-[400px] flex flex-col sm:grid sm:grid-cols-[0.75fr_1fr] items-center rounded-2xl border-[2px] border-black/5 shadow-xl overflow-hidden hover:bg-black/5 transition-colors duration-200'
     >
       <Image
         width={400}

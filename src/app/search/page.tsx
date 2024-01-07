@@ -13,8 +13,8 @@ export default async function SearchPage({ searchParams }: SearchParams) {
 
   return (
     <main className='container mx-auto px-4 py-10 sm:py-20 flex flex-col items-center gap-10'>
-      <h1 className='text-3xl font-semibold text-primary break-all'>
-        Search results for: {vehicle}
+      <h1 className='text-3xl font-semibold text-primary'>
+        Search results for: <span className='break-all'>{vehicle}</span>
       </h1>
       <section className='flex flex-col gap-4'>
         {cars.length === 0 && (
