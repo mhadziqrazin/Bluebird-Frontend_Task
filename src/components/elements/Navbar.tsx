@@ -5,7 +5,7 @@ import { FaCarSide } from 'react-icons/fa'
 import { MdOutlineMenu, MdClose } from 'react-icons/md'
 import { useOutsideClick } from '@/hooks'
 import { Search } from './Search'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
 interface NavMenu {
@@ -25,22 +25,24 @@ export const Navbar: React.FC = () => {
   const [visible, setVisible] = useState<boolean>(false)
   const router = useRouter()
   const pathname = usePathname()
+  const searchParams = useSearchParams()
 
   useEffect(() => {
     setVisible(openMenu)
   }, [openMenu])
+
+  const handleCloseMenu = () => {
+    setVisible(false)
+    setTimeout(() => setOpenMenu(false), 200)
+  }
 
   useEffect(() => {
     if (pathname === '/wishlist') setMenu('Wishlist')
     else if (pathname === '/mybook') setMenu('My Book')
     else if (pathname === '/') setMenu('Home')
     else setMenu('')
-  }, [pathname])
-
-  const handleCloseMenu = () => {
-    setVisible(false)
-    setTimeout(() => setOpenMenu(false), 200)
-  }
+    handleCloseMenu()
+  }, [pathname, searchParams])
 
   const menuRef = useOutsideClick(handleCloseMenu)
 
