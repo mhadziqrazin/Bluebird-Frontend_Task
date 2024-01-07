@@ -34,6 +34,7 @@ export const Navbar: React.FC = () => {
     if (pathname === '/wishlist') setMenu('Wishlist')
     else if (pathname === '/mybook') setMenu('My Book')
     else if (pathname === '/') setMenu('Home')
+    else setMenu('')
   }, [pathname])
 
   const handleCloseMenu = () => {
@@ -55,13 +56,13 @@ export const Navbar: React.FC = () => {
           <FaCarSide size={25} />
         </a>
         <ul className='hidden sm:flex gap-6 font-medium'>
-          <li className={`${menu === 'Home' ? 'bg-secondary rounded-full' : ''} px-4 py-[3px]`}>
+          <li className={`${menu === 'Home' ? 'bg-secondary' : ''} rounded-full px-4 py-[3px] hover:bg-secondary`}>
             <Link href='/'>Home</Link>
           </li>
-          <li className={`${menu === 'Wishlist' ? 'bg-secondary rounded-full' : ''} px-4 py-[3px]`}>
+          <li className={`${menu === 'Wishlist' ? 'bg-secondary' : ''} rounded-full px-4 py-[3px] hover:bg-secondary`}>
             <Link href='/wishlist'>Wishlist</Link>
           </li>
-          <li className={`${menu === 'My Book' ? 'bg-secondary rounded-full' : ''} px-4 py-[3px]`}>
+          <li className={`${menu === 'My Book' ? 'bg-secondary' : ''} rounded-full px-4 py-[3px] hover:bg-secondary`}>
             <Link href='/mybook'>My Book</Link>
           </li>
         </ul>
@@ -85,7 +86,7 @@ export const Navbar: React.FC = () => {
                     key={opt.name}
                     className={`${
                       menu === opt.name ? 'bg-secondary' : ''
-                    } w-full px-4 py-[3px] rounded-full`}
+                    } w-full px-4 py-[3px] hover:bg-secondary rounded-full`}
                   >
                     <button onClick={() => handleMenuButton(opt)} className='w-full text-left'>
                       {opt.name}
