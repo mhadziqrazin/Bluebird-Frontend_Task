@@ -26,7 +26,7 @@ export default async function Detail({ searchParams }: DetailSearchParams) {
   return (
     <main className='container mx-auto px-4 flex justify-center py-10 sm:py-40'>
       <section className='flex flex-col md:grid md:grid-cols-[0.75fr_1fr]'>
-        <Image width={600} height={600} src={car.imageURL} alt={car.vehicle} />
+        <Image width={600} height={600} src={car.imageURL} alt={car.vehicle} unoptimized />
         <div className='flex flex-col gap-4 p-4 sm:p-8 justify-between rounded-2xl bg-dark/10'>
           <div className='flex justify-between items-start'>
             <div className='flex flex-col gap-2'>

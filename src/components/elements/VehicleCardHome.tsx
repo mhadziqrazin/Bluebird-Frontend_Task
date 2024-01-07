@@ -24,6 +24,7 @@ export const VehicleCardHome: React.FC<VehicleCardHomeProps> = ({ car }) => {
         height={250}
         src={car.imageURL.split(' ').join('')}
         alt={car.vehicle}
+        unoptimized
         className='p-4'
       />
       <p className='px-2 py-6 text-center text-xl font-medium text-black/60'>{car.vehicle}</p>

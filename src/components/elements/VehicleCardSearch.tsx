@@ -24,6 +24,7 @@ export const VehicleCardSearch: React.FC<VehicleCardSearchProps> = ({ car }) => 
         height={400}
         src={car.imageURL.split(' ').join('')}
         alt={car.vehicle}
+        unoptimized
         className='p-4'
       />
       <div className='p-4 self-start'>
