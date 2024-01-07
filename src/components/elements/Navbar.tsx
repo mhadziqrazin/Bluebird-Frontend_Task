@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     if (pathname === '/wishlist') setMenu('Wishlist')
     else if (pathname === '/mybook') setMenu('My Book')
-    else setMenu('Home')
+    else if (pathname === '/') setMenu('Home')
   }, [pathname])
 
   const handleCloseMenu = () => {
