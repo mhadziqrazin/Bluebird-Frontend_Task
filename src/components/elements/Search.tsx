@@ -20,11 +20,11 @@ export const Search: React.FC = () => {
   return (
     <div ref={searchRef} className='relative w-full h-[30px] flex justify-end items-center gap-2'>
       {openSearch && (
-        <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch} className='w-full'>
           <input
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className='text-primary rounded-full grow px-4 py-[3px] sm:absolute sm:top-0 sm:right-[29px] outline-none'
+            className='w-full text-primary rounded-full grow px-4 py-[3px] sm:absolute sm:top-0 sm:right-[29px] outline-none'
           />
         </form>
       )}
