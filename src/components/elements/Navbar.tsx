@@ -58,13 +58,25 @@ export const Navbar: React.FC = () => {
           <FaCarSide size={25} />
         </a>
         <ul className='hidden sm:flex gap-6 font-medium'>
-          <li className={`${menu === 'Home' ? 'bg-secondary' : ''} rounded-full px-4 py-[3px] hover:bg-secondary`}>
+          <li
+            className={`${
+              menu === 'Home' ? 'bg-secondary' : ''
+            } rounded-full px-4 py-[3px] hover:bg-secondary`}
+          >
             <Link href='/'>Home</Link>
           </li>
-          <li className={`${menu === 'Wishlist' ? 'bg-secondary' : ''} rounded-full px-4 py-[3px] hover:bg-secondary`}>
+          <li
+            className={`${
+              menu === 'Wishlist' ? 'bg-secondary' : ''
+            } rounded-full px-4 py-[3px] hover:bg-secondary`}
+          >
             <Link href='/wishlist'>Wishlist</Link>
           </li>
-          <li className={`${menu === 'My Book' ? 'bg-secondary' : ''} rounded-full px-4 py-[3px] hover:bg-secondary`}>
+          <li
+            className={`${
+              menu === 'My Book' ? 'bg-secondary' : ''
+            } rounded-full px-4 py-[3px] hover:bg-secondary`}
+          >
             <Link href='/mybook'>My Book</Link>
           </li>
         </ul>

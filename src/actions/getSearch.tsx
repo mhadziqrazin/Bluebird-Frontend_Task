@@ -24,10 +24,9 @@ export async function getSearch(vehicle: string) {
       cars.push({
         ...car,
         id: data.type[i].id
-      }
-    )}
+      })
+    }
   }
 
   return cars
 }
-

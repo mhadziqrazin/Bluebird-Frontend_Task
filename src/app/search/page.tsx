@@ -1,5 +1,5 @@
-import { getSearch } from "@/actions"
-import { VehicleCardSearch } from "@/components/elements"
+import { getSearch } from '@/actions'
+import { VehicleCardSearch } from '@/components/elements'
 
 interface SearchParams {
   searchParams: {
@@ -18,9 +18,7 @@ export default async function SearchPage({ searchParams }: SearchParams) {
       </h1>
       <section className='flex flex-col gap-4'>
         {cars.length === 0 && (
-          <h2 className='text-lg font-medium text-black/60'>
-            No result matched
-          </h2>
+          <h2 className='text-lg font-medium text-black/60'>No result matched</h2>
         )}
         {cars.map((car) => (
           <VehicleCardSearch car={car} />

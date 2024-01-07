@@ -29,9 +29,7 @@ export const VehicleCardSearch: React.FC<VehicleCardSearchProps> = ({ car }) => 
       />
       <div className='p-4 self-start'>
         <p className='text-2xl font-semibold text-secondary'>{car.vehicle}</p>
-        <p className='text-black/60 max-w-[400px]'>
-          {car.description.join(', ')}
-        </p>
+        <p className='text-black/60 max-w-[400px]'>{car.description.join(', ')}</p>
       </div>
       <div className='absolute top-4 right-4'>
         <LikeButton car={car} />
@@ -39,4 +37,3 @@ export const VehicleCardSearch: React.FC<VehicleCardSearchProps> = ({ car }) => 
     </Link>
   )
 }
-

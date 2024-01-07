@@ -7,10 +7,12 @@ export default async function Home() {
 
   const allVehicle: CarStore[] = []
   data.type.map((type) => {
-    type.car_type.map((car) => allVehicle.push({
-      ...car,
-      id: type.id
-    }))
+    type.car_type.map((car) =>
+      allVehicle.push({
+        ...car,
+        id: type.id
+      })
+    )
   })
   allVehicle.sort(() => 0.5 - Math.random())
 

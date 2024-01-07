@@ -29,4 +29,3 @@ export async function getCategory(id: number) {
 
   return []
 }
-
