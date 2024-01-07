@@ -29,7 +29,7 @@ export default async function Detail({ searchParams }: DetailSearchParams) {
         <Image width={600} height={600} src={car.imageURL} alt={car.vehicle} />
         <div className='flex flex-col gap-4 p-4 sm:p-8 justify-between rounded-2xl bg-dark/10'>
           <div className='flex justify-between items-start'>
-            <div>
+            <div className='flex flex-col gap-2'>
               <h1 className='text-3xl sm:text-5xl font-semibold text-primary'>{car.vehicle}</h1>
               <p className='sm:text-xl text-primary/60'>{car.description.join(', ')}</p>
             </div>

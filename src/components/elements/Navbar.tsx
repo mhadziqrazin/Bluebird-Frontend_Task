@@ -48,10 +48,6 @@ export const Navbar: React.FC = () => {
     router.push(opt.href)
   }
 
-  const handleSearch = () => {
-    return
-  }
-
   return (
     <nav className='bg-primary z-10'>
       <div className='relative flex items-center justify-between container mx-auto px-4 py-4 text-white'>
